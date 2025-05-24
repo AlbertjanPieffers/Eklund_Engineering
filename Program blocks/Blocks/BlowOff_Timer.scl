@@ -1,0 +1,77 @@
+﻿FUNCTION_BLOCK "BlowOff_Timer"
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+   VAR_INPUT 
+      Enable : Bool;
+      CycleTime : Time;
+      PulseDuration : Time;
+      NowTime : Time;
+   END_VAR
+
+   VAR_OUTPUT 
+      Q_Pulse : Bool;
+   END_VAR
+
+   VAR 
+      CycleTimer {InstructionName := 'TON'; LibVersion := '1.0'; S7_SetPoint := 'False'} : TON;
+      PulseTimer {InstructionName := 'TON'; LibVersion := '1.0'; S7_SetPoint := 'False'} : TON;
+      State { S7_SetPoint := 'True'} : Int;
+      S_PEXT : Int;
+   END_VAR
+
+   VAR_TEMP 
+      PulseActive : Bool;
+      StartPulse : Bool;
+      TriggerPulse : Bool;
+      PulseBusy : Bool;
+      DummyWord : Word;
+      DummyWord2 : Bool;
+      T1 : Int;
+      PulseStartTime : Time;
+      LastPulseEndTime : Time;
+      LastPulseTime : Time;
+   END_VAR
+
+
+BEGIN
+	// Logica
+	IF #Enable THEN
+	    // Start cyclische timer
+	    #CycleTimer(IN := TRUE,
+	                PT := #CycleTime);
+	    
+	    IF #CycleTimer.Q THEN
+	        // Start puls-timer als cyclus voorbij is
+	        #PulseTimer(IN := TRUE,
+	                    PT := #PulseDuration);
+	        
+	        // Reset de CycleTimer voor de volgende cyclus
+	        #CycleTimer(IN := FALSE,
+	                    PT := #CycleTime);
+	    END_IF;
+	    
+	    // Puls-timer logica
+	    IF #PulseTimer.IN THEN
+	        #Q_Pulse := TRUE;
+	        
+	        IF #PulseTimer.Q THEN
+	            // Puls voorbij, pulse output uit
+	            #PulseTimer(IN := FALSE,
+	                        PT := #PulseDuration);
+	            #Q_Pulse := FALSE;
+	        END_IF;
+	    ELSE
+	        #Q_Pulse := FALSE;
+	    END_IF;
+	    
+	ELSE
+	    // Alles resetten bij disable
+	    #CycleTimer(IN := FALSE,
+	                PT := #CycleTime);
+	    #PulseTimer(IN := FALSE,
+	                PT := #PulseDuration);
+	    #Q_Pulse := FALSE;
+	END_IF;
+	
+END_FUNCTION_BLOCK
+

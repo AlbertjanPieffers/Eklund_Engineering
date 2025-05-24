@@ -1,0 +1,126 @@
+﻿FUNCTION "SCL_Block" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+
+BEGIN
+	// Reset de Word variabelen aan het begin van elke cyclus
+	"Alarms".AlarmsWord := 0;
+	"Alarms".HMI_Alarm_Drive1 := 0;
+	"Alarms".HMI_Alarm_Drive2 := 0;
+	"Alarms".HMI_Alarm_Drive3 := 0;
+	"Alarms".HMI_Alarm_Drive4 := 0;
+	"Alarms".HMI_Alarm_Drive5 := 0;
+	
+	// Controleer de alarmen en zet de respectievelijke bits aan
+	IF "Alarms".AlarmStruct.Alarm_Product_Not_Position THEN
+	    "Alarms".AlarmsWord := "Alarms".AlarmsWord OR WORD#1; // Zet bit 0 aan
+	END_IF;
+	
+	IF "Alarms".AlarmStruct.Alarm_Axis_Not_Position THEN
+	    "Alarms".AlarmsWord := "Alarms".AlarmsWord OR WORD#2; // Zet bit 1 aan
+	END_IF;
+	
+	IF "Alarms".AlarmStruct.Alarm_Drive1 THEN
+	    "Alarms".HMI_Alarm_Drive1 := "Alarms".HMI_Alarm_Drive1 OR WORD#1; // Zet bit 2 aan
+	END_IF;
+	
+	IF "Alarms".AlarmStruct.Alarm_Drive2 THEN
+	    "Alarms".HMI_Alarm_Drive2 := "Alarms".HMI_Alarm_Drive2 OR WORD#1; // Zet bit 3 aan
+	END_IF;
+	
+	IF "Alarms".AlarmStruct.Alarm_Drive3 THEN
+	    "Alarms".HMI_Alarm_Drive3 := "Alarms".HMI_Alarm_Drive3 OR WORD#1; // Zet bit 4 aan
+	END_IF;
+	
+	IF "Alarms".AlarmStruct.Alarm_Drive4 THEN
+	    "Alarms".HMI_Alarm_Drive4 := "Alarms".HMI_Alarm_Drive4 OR WORD#1; // Zet bit 5 aan
+	END_IF;
+	
+	IF "Alarms".AlarmStruct.Alarm_Drive5 THEN
+	    "Alarms".HMI_Alarm_Drive5 := "Alarms".HMI_Alarm_Drive5 OR WORD#1; // Zet bit 6 aan
+	END_IF;
+	
+	
+	// Position Program Axis 3 (Wals)
+	
+	// Configureer de timer om elke 0,5 seconde af te lopen
+	"Timer_0_5s".TON(IN := TRUE,
+	PT := "PLCMemory"."Encoder PulsOffset");
+	
+	// Controleer of de timer is afgelopen
+	IF "Timer_0_5s".Q THEN
+	    // Verhoog of verlaag de positie afhankelijk van de aandrijfsignalen
+	    IF "Drive 3 RUN FWD" THEN
+	        "PLCMemory".EncoderPosition := "PLCMemory".EncoderPosition + "PLCMemory".StepSize; // Verhoog met de stepgrootte
+	    ELSIF "Drive 3 REV" THEN
+	        "PLCMemory".EncoderPosition := "PLCMemory".EncoderPosition - "PLCMemory".StepSize; // Verlaag met de stepgrootte
+	    END_IF;
+	    
+	    // Wrapping van de positie bij overschrijden van 360 graden of onder 0 graden
+	    IF "PLCMemory".EncoderPosition >= 360.0 THEN
+	        "PLCMemory".EncoderPosition := 0.0;  // Wrapping naar 0 als de positie 360 overschrijdt
+	    ELSIF "PLCMemory".EncoderPosition < 0.0 THEN
+	        "PLCMemory".EncoderPosition := 360.0; // Wrapping naar 360 als de positie onder 0 gaat
+	    END_IF;
+	    
+	    // Reset de timer
+	    "Timer_0_5s".TON (IN := FALSE,
+	                      PT := "PLCMemory"."Encoder PulsOffset"); // Reset de timer zodat deze opnieuw kan starten
+	END_IF;
+	
+	// Homing logica
+	IF "Sensor Wals (Option)" THEN
+	    "PLCMemory".EncoderPosition := 0.0;  // Reset de positie naar 0 als de sensor wordt geactiveerd
+	END_IF;
+	
+	
+	
+	//Drive Servo Control Here:
+	/// Desired Position Axis 3
+	
+	// Controleer of de HMI-knop is ingedrukt en er een gewenste positie is ingesteld
+	//IF "HMI_Des_Pos_Axis3" THEN
+	    //"GoButtonPressed" := TRUE; // HMI-knop is ingedrukt, start beweging
+	//END_IF;
+	
+	// Beveiliging voor de Desired_Encoder_Position: Zorg dat de waarde tussen 0 en 360 blijft
+	//IF "PLCMemory".Desired_Encoder_Position > 360.0 THEN
+	  //  "PLCMemory".Desired_Encoder_Position := 360.0;  // Zet naar 360 als de waarde boven 360 ligt
+	//ELSIF "PLCMemory".Desired_Encoder_Position < 0.0 THEN
+	    //"PLCMemory".Desired_Encoder_Position := 0.0;  // Zet naar 0 als de waarde onder 0 ligt
+	//END_IF;
+	
+	// Wrapping van de gewenste positie: Als de gewenste positie 360 is, zet deze dan op 0
+	//IF "PLCMemory".Desired_Encoder_Position = 360.0 THEN
+	   // "PLCMemory".Desired_Encoder_Position := 0.0;  // Wrapping naar 0 als de gewenste positie 360 is
+	//END_IF;
+	
+	// Voer beweging uit totdat de gewenste positie is bereikt
+	//IF "GoButtonPressed" THEN
+	    // Bepaal de bewegingsrichting en start de beweging
+	  //  IF "PLCMemory".EncoderPosition < "PLCMemory".Desired_Encoder_Position - "PLCMemory".Tolerance THEN
+	        // Beweeg vooruit met StepSize als snelheid
+	      //  "PLCMemory".EncoderPosition := "PLCMemory".EncoderPosition + "PLCMemory".StepSize;
+	     //   "Drive_3_Manual" := TRUE;   // Activeer vooruitbeweging
+	      //  "Drive 3 REV" := FALSE;     // Zorg dat achteruitbeweging uit is
+	        
+	  //  ELSIF "PLCMemory".EncoderPosition > "PLCMemory".Desired_Encoder_Position + "PLCMemory".Tolerance THEN
+	        // Beweeg achteruit met StepSize als snelheid
+	     //   "PLCMemory".EncoderPosition := "PLCMemory".EncoderPosition - "PLCMemory".StepSize;
+	    //    "Drive_3_Manual" := FALSE;  // Zorg dat vooruitbeweging uit is
+	    //    "Drive 3 REV" := TRUE;      // Activeer achteruitbeweging
+	        
+	   // ELSE
+	        // Stop de beweging zodra de positie binnen de tolerantie komt
+	      //  "Drive_3_Manual" := FALSE;    // Zet vooruitbeweging uit
+	     //   "Drive 3 REV" := FALSE;       // Zet achteruitbeweging uit
+	     //   "GoButtonPressed" := FALSE;   // Zet de Go-knop uit om verdere beweging te stoppen
+	   // END_IF;
+	//END_IF;
+	
+	
+	
+	
+	
+END_FUNCTION
+

@@ -1,0 +1,58 @@
+﻿FUNCTION_BLOCK "ProductBuffer"
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+   VAR_INPUT 
+      SensorInput : Bool;
+      TimeDelay : Time;
+      TriggerFeedback : Bool;
+   END_VAR
+
+   VAR_OUTPUT 
+      TriggerMovement : Bool;
+      ProductCount : Int;
+   END_VAR
+
+   VAR 
+      PrevSensor : Bool;
+      DelayTimer {InstructionName := 'TON'; LibVersion := '1.0'; S7_SetPoint := 'False'} : TON;
+      MovementActive { S7_SetPoint := 'True'} : Bool;
+   END_VAR
+
+
+BEGIN
+	// Flankdetectie op sensor
+	IF #SensorInput AND NOT #PrevSensor THEN
+	    IF #ProductCount < 32767 THEN
+	        #ProductCount := #ProductCount + 1;
+	    END_IF;
+	END_IF;
+	#PrevSensor := #SensorInput;
+	
+	// Timer mag alleen lopen als:
+	// - Er producten zijn
+	// - Er geen beweging actief is
+	IF (#ProductCount > 0) AND (NOT #MovementActive) THEN
+	    #DelayTimer(IN := TRUE,
+	                PT := #TimeDelay);
+	ELSE
+	    #DelayTimer(IN := FALSE,
+	                PT := #TimeDelay);
+	END_IF;
+	
+	// Als de timer klaar is → activeer beweging en zet MovementActive
+	IF #DelayTimer.Q THEN
+	    #TriggerMovement := TRUE;
+	    #MovementActive := TRUE;
+	    #ProductCount := #ProductCount - 1;
+	    #DelayTimer(IN := FALSE,
+	                PT := #TimeDelay); // Reset timer
+	END_IF;
+	
+	// Wacht op TriggerFeedback om TriggerMovement terug laag te zetten
+	IF #MovementActive AND #TriggerFeedback THEN
+	    #TriggerMovement := FALSE;
+	    #MovementActive := FALSE;
+	END_IF;
+	
+END_FUNCTION_BLOCK
+

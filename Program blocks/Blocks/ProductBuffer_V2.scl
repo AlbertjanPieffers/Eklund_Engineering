@@ -1,0 +1,227 @@
+﻿FUNCTION_BLOCK "ProductBuffer_V2"
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+   VAR_INPUT 
+      SensorInput : Bool;
+      SensorManual : Bool;
+      TimeDelay : Time;
+      SystemTime : Time;
+      TriggerFeedback : Bool;
+   END_VAR
+
+   VAR_OUTPUT 
+      TriggerMovement : Bool;
+      InsertIndex { ExternalVisible := 'False'; ExternalWritable := 'False'} : Int;
+      ProductCount : Int;
+      SystemTicks : DInt;
+   END_VAR
+
+   VAR 
+      ProductQueue { S7_SetPoint := 'False'} : Array[0..1] of "ProductEntry";
+      StartTimes : Struct
+         _0 : Time;
+         _1 : Time;
+         _2 : Time;
+         _3 : Time;
+         _4 : Time;
+         _5 : Time;
+         _6 : Time;
+         _7 : Time;
+         _8 : Time;
+         _9 : Time;
+      END_STRUCT;
+      Actives : Struct
+         _0 : Bool;
+         _1 : Bool;
+         _2 : Bool;
+         _3 : Bool;
+         _4 : Bool;
+         _5 : Bool;
+         _6 : Bool;
+         _7 : Bool;
+         _8 : Bool;
+         _9 : Bool;
+      END_STRUCT;
+      PrevSensor { ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+      MovementActive { ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;
+      i { ExternalVisible := 'False'; ExternalWritable := 'False'} : Int;
+      Elapsed { ExternalVisible := 'False'; ExternalWritable := 'False'} : DInt;
+   END_VAR
+
+
+BEGIN
+	// Flankdetectie sensor
+	IF #SensorInput AND NOT #PrevSensor THEN
+	    CASE #InsertIndex MOD 10 OF
+	        0:
+	            IF NOT #Actives._0 THEN
+	                #Actives._0 := TRUE;
+	                #StartTimes._0 := #SystemTime;
+	            END_IF;
+	        1:
+	            IF NOT #Actives._1 THEN
+	                #Actives._1 := TRUE;
+	                #StartTimes._1 := #SystemTime;
+	            END_IF;
+	        2:
+	            IF NOT #Actives._2 THEN
+	                #Actives._2 := TRUE;
+	                #StartTimes._2 := #SystemTime;
+	            END_IF;
+	        3:
+	            IF NOT #Actives._3 THEN
+	                #Actives._3 := TRUE;
+	                #StartTimes._3 := #SystemTime;
+	            END_IF;
+	        4:
+	            IF NOT #Actives._4 THEN
+	                #Actives._4 := TRUE;
+	                #StartTimes._4 := #SystemTime;
+	            END_IF;
+	        5:
+	            IF NOT #Actives._5 THEN
+	                #Actives._5 := TRUE;
+	                #StartTimes._5 := #SystemTime;
+	            END_IF;
+	        6:
+	            IF NOT #Actives._6 THEN
+	                #Actives._6 := TRUE;
+	                #StartTimes._6 := #SystemTime;
+	            END_IF;
+	        7:
+	            IF NOT #Actives._7 THEN
+	                #Actives._7 := TRUE;
+	                #StartTimes._7 := #SystemTime;
+	            END_IF;
+	        8:
+	            IF NOT #Actives._8 THEN
+	                #Actives._8 := TRUE;
+	                #StartTimes._8 := #SystemTime;
+	            END_IF;
+	        9:
+	            IF NOT #Actives._9 THEN
+	                #Actives._9 := TRUE;
+	                #StartTimes._9 := #SystemTime;
+	            END_IF;
+	    END_CASE;
+	    #InsertIndex := (#InsertIndex + 1) MOD 10;
+	END_IF;
+	
+	#PrevSensor := #SensorInput;
+	
+	// Tellen hoeveel producten actief zijn
+	#ProductCount := 0;
+	IF #Actives._0 THEN
+	    #ProductCount := #ProductCount + 1;
+	END_IF;
+	IF #Actives._1 THEN
+	    #ProductCount := #ProductCount + 1;
+	END_IF;
+	IF #Actives._2 THEN
+	    #ProductCount := #ProductCount + 1;
+	END_IF;
+	IF #Actives._3 THEN
+	    #ProductCount := #ProductCount + 1;
+	END_IF;
+	IF #Actives._4 THEN
+	    #ProductCount := #ProductCount + 1;
+	END_IF;
+	IF #Actives._5 THEN
+	    #ProductCount := #ProductCount + 1;
+	END_IF;
+	IF #Actives._6 THEN
+	    #ProductCount := #ProductCount + 1;
+	END_IF;
+	IF #Actives._7 THEN
+	    #ProductCount := #ProductCount + 1;
+	END_IF;
+	IF #Actives._8 THEN
+	    #ProductCount := #ProductCount + 1;
+	END_IF;
+	IF #Actives._9 THEN
+	    #ProductCount := #ProductCount + 1;
+	END_IF;
+	
+	// Beweging starten als een product klaar is en geen andere beweging actief is
+	IF NOT #MovementActive THEN
+	    IF #Actives._0 THEN
+	        #Elapsed := TIME_TO_DINT(#SystemTime) - TIME_TO_DINT(#StartTimes._0);
+	        IF #Elapsed >= TIME_TO_DINT(#TimeDelay) THEN
+	            #TriggerMovement := TRUE;
+	            #MovementActive := TRUE;
+	            #Actives._0 := FALSE;
+	        END_IF;
+	    ELSIF #Actives._1 THEN
+	        #Elapsed := TIME_TO_DINT(#SystemTime) - TIME_TO_DINT(#StartTimes._1);
+	        IF #Elapsed >= TIME_TO_DINT(#TimeDelay) THEN
+	            #TriggerMovement := TRUE;
+	            #MovementActive := TRUE;
+	            #Actives._1 := FALSE;
+	        END_IF;
+	    ELSIF #Actives._2 THEN
+	        #Elapsed := TIME_TO_DINT(#SystemTime) - TIME_TO_DINT(#StartTimes._2);
+	        IF #Elapsed >= TIME_TO_DINT(#TimeDelay) THEN
+	            #TriggerMovement := TRUE;
+	            #MovementActive := TRUE;
+	            #Actives._2 := FALSE;
+	        END_IF;
+	    ELSIF #Actives._3 THEN
+	        #Elapsed := TIME_TO_DINT(#SystemTime) - TIME_TO_DINT(#StartTimes._3);
+	        IF #Elapsed >= TIME_TO_DINT(#TimeDelay) THEN
+	            #TriggerMovement := TRUE;
+	            #MovementActive := TRUE;
+	            #Actives._3 := FALSE;
+	        END_IF;
+	    ELSIF #Actives._4 THEN
+	        #Elapsed := TIME_TO_DINT(#SystemTime) - TIME_TO_DINT(#StartTimes._4);
+	        IF #Elapsed >= TIME_TO_DINT(#TimeDelay) THEN
+	            #TriggerMovement := TRUE;
+	            #MovementActive := TRUE;
+	            #Actives._4 := FALSE;
+	        END_IF;
+	    ELSIF #Actives._5 THEN
+	        #Elapsed := TIME_TO_DINT(#SystemTime) - TIME_TO_DINT(#StartTimes._5);
+	        IF #Elapsed >= TIME_TO_DINT(#TimeDelay) THEN
+	            #TriggerMovement := TRUE;
+	            #MovementActive := TRUE;
+	            #Actives._5 := FALSE;
+	        END_IF;
+	    ELSIF #Actives._6 THEN
+	        #Elapsed := TIME_TO_DINT(#SystemTime) - TIME_TO_DINT(#StartTimes._6);
+	        IF #Elapsed >= TIME_TO_DINT(#TimeDelay) THEN
+	            #TriggerMovement := TRUE;
+	            #MovementActive := TRUE;
+	            #Actives._6 := FALSE;
+	        END_IF;
+	    ELSIF #Actives._7 THEN
+	        #Elapsed := TIME_TO_DINT(#SystemTime) - TIME_TO_DINT(#StartTimes._7);
+	        IF #Elapsed >= TIME_TO_DINT(#TimeDelay) THEN
+	            #TriggerMovement := TRUE;
+	            #MovementActive := TRUE;
+	            #Actives._7 := FALSE;
+	        END_IF;
+	    ELSIF #Actives._8 THEN
+	        #Elapsed := TIME_TO_DINT(#SystemTime) - TIME_TO_DINT(#StartTimes._8);
+	        IF #Elapsed >= TIME_TO_DINT(#TimeDelay) THEN
+	            #TriggerMovement := TRUE;
+	            #MovementActive := TRUE;
+	            #Actives._8 := FALSE;
+	        END_IF;
+	    ELSIF #Actives._9 THEN
+	        #Elapsed := TIME_TO_DINT(#SystemTime) - TIME_TO_DINT(#StartTimes._9);
+	        IF #Elapsed >= TIME_TO_DINT(#TimeDelay) THEN
+	            #TriggerMovement := TRUE;
+	            #MovementActive := TRUE;
+	            #Actives._9 := FALSE;
+	        END_IF;
+	    END_IF;
+	END_IF;
+	
+	// Beweging beëindigen na feedback
+	IF #MovementActive AND #TriggerFeedback THEN
+	    #TriggerMovement := FALSE;
+	    #MovementActive := FALSE;
+	END_IF;
+	
+END_FUNCTION_BLOCK
+

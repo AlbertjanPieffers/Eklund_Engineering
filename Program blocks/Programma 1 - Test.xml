@@ -1,0 +1,1114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V16" />
+  <DocumentInfo>
+    <Created>2025-05-24T14:07:36.461542Z</Created>
+    <ExportSetting>WithDefaults</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Advanced</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FB ID="0">
+    <AttributeList>
+      <AcknowledgeErrorsRequired>true</AcknowledgeErrorsRequired>
+      <AutoNumber>true</AutoNumber>
+      <CreateMinimizedDB>false</CreateMinimizedDB>
+      <HeaderAuthor />
+      <HeaderFamily />
+      <HeaderName />
+      <HeaderVersion>0.1</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
+  <Section Name="Input">
+    <Member Name="OFF_SQ" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Turn sequence off</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member>
+    <Member Name="INIT_SQ" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Set sequence to initial state</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member>
+    <Member Name="ACK_EF" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Acknowledge all errors and faults</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member>
+    <Member Name="S_PREV" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Output previous step in parameter S_NO</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member>
+    <Member Name="S_NEXT" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Indicate next step in parameter S_NO</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member>
+    <Member Name="SW_AUTO" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Automatic mode</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member>
+    <Member Name="SW_TAP" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Semiautomatic/switch with transition</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member>
+    <Member Name="SW_TOP" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Semiautomatic/ignore transition</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member>
+    <Member Name="SW_MAN" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Manual mode</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member>
+    <Member Name="S_SEL" Datatype="Int" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Select step to be output to S_NO</MultiLanguageText></Comment><StartValue Informative="true">0</StartValue></Member>
+    <Member Name="S_ON" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Activate step indicated in S_NO</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member>
+    <Member Name="S_OFF" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Deactivate step indicated S_NO</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member>
+    <Member Name="T_PUSH" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Enable transition to switch in semi automatic mode</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member>
+    <Member Name="Confimation Position 1" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList></Member>
+    <Member Name="Confirmation Position 2" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList></Member>
+    <Member Name="Products more than zero" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList></Member>
+    <Member Name="Products zero" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList></Member>
+    <Member Name="Timer 1" Datatype="Time" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList></Member>
+  </Section>
+  <Section Name="Output">
+    <Member Name="S_NO" Datatype="Int" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Step number</MultiLanguageText></Comment><StartValue Informative="true">0</StartValue></Member>
+    <Member Name="S_MORE" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">More steps are available and can be shown in S_NO</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member>
+    <Member Name="S_ACTIVE" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Step indicated in S_NO is active</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member>
+    <Member Name="ERR_FLT" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Interlock or supervision group error</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member>
+    <Member Name="AUTO_ON" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Automatic mode is active</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member>
+    <Member Name="TAP_ON" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Semiautomatic mode/step with transition enabled</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member>
+    <Member Name="TOP_ON" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Semiautomatic mode/ignore transition enabled</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member>
+    <Member Name="MAN_ON" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Manual mode is active</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member>
+    <Member Name="Move Position 1" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList></Member>
+    <Member Name="Move Position 2" Datatype="Bool" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList></Member>
+  </Section>
+  <Section Name="InOut" />
+  <Section Name="Static">
+    <Member Name="System RUN" Datatype="GraphTransition" Version="1.0" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Transition structure</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="TV" Datatype="Bool" /><Member Name="TT" Datatype="Bool" /><Member Name="TS" Datatype="Bool" /><Member Name="CF_IV" Datatype="Bool" /><Member Name="TNO" Datatype="Int"><StartValue Informative="true">1</StartValue></Member><Member Name="CRIT" Datatype="DWord" /><Member Name="CRIT_OLD" Datatype="DWord" /><Member Name="CRIT_FLT" Datatype="DWord" /></Section></Sections></Member>
+    <Member Name="Drive Enabled" Datatype="GraphTransition" Version="1.0" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Transition structure</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="TV" Datatype="Bool" /><Member Name="TT" Datatype="Bool" /><Member Name="TS" Datatype="Bool" /><Member Name="CF_IV" Datatype="Bool" /><Member Name="TNO" Datatype="Int"><StartValue Informative="true">2</StartValue></Member><Member Name="CRIT" Datatype="DWord" /><Member Name="CRIT_OLD" Datatype="DWord" /><Member Name="CRIT_FLT" Datatype="DWord" /></Section></Sections></Member>
+    <Member Name="Conf Pos 1" Datatype="GraphTransition" Version="1.0" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Transition structure</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="TV" Datatype="Bool" /><Member Name="TT" Datatype="Bool" /><Member Name="TS" Datatype="Bool" /><Member Name="CF_IV" Datatype="Bool" /><Member Name="TNO" Datatype="Int"><StartValue Informative="true">3</StartValue></Member><Member Name="CRIT" Datatype="DWord" /><Member Name="CRIT_OLD" Datatype="DWord" /><Member Name="CRIT_FLT" Datatype="DWord" /></Section></Sections></Member>
+    <Member Name="Prod More than zero" Datatype="GraphTransition" Version="1.0" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Transition structure</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="TV" Datatype="Bool" /><Member Name="TT" Datatype="Bool" /><Member Name="TS" Datatype="Bool" /><Member Name="CF_IV" Datatype="Bool" /><Member Name="TNO" Datatype="Int"><StartValue Informative="true">4</StartValue></Member><Member Name="CRIT" Datatype="DWord" /><Member Name="CRIT_OLD" Datatype="DWord" /><Member Name="CRIT_FLT" Datatype="DWord" /></Section></Sections></Member>
+    <Member Name="Timer" Datatype="GraphTransition" Version="1.0" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Transition structure</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="TV" Datatype="Bool" /><Member Name="TT" Datatype="Bool" /><Member Name="TS" Datatype="Bool" /><Member Name="CF_IV" Datatype="Bool" /><Member Name="TNO" Datatype="Int"><StartValue Informative="true">5</StartValue></Member><Member Name="CRIT" Datatype="DWord" /><Member Name="CRIT_OLD" Datatype="DWord" /><Member Name="CRIT_FLT" Datatype="DWord" /></Section></Sections></Member>
+    <Member Name="Conf Pos 2" Datatype="GraphTransition" Version="1.0" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Transition structure</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="TV" Datatype="Bool" /><Member Name="TT" Datatype="Bool" /><Member Name="TS" Datatype="Bool" /><Member Name="CF_IV" Datatype="Bool" /><Member Name="TNO" Datatype="Int"><StartValue Informative="true">6</StartValue></Member><Member Name="CRIT" Datatype="DWord" /><Member Name="CRIT_OLD" Datatype="DWord" /><Member Name="CRIT_FLT" Datatype="DWord" /></Section></Sections></Member>
+    <Member Name="Confirmation Pos 1" Datatype="GraphTransition" Version="1.0" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Transition structure</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="TV" Datatype="Bool" /><Member Name="TT" Datatype="Bool" /><Member Name="TS" Datatype="Bool" /><Member Name="CF_IV" Datatype="Bool" /><Member Name="TNO" Datatype="Int"><StartValue Informative="true">7</StartValue></Member><Member Name="CRIT" Datatype="DWord" /><Member Name="CRIT_OLD" Datatype="DWord" /><Member Name="CRIT_FLT" Datatype="DWord" /></Section></Sections></Member>
+    <Member Name="Conf Side" Datatype="GraphTransition" Version="1.0" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Transition structure</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="TV" Datatype="Bool" /><Member Name="TT" Datatype="Bool" /><Member Name="TS" Datatype="Bool" /><Member Name="CF_IV" Datatype="Bool" /><Member Name="TNO" Datatype="Int"><StartValue Informative="true">8</StartValue></Member><Member Name="CRIT" Datatype="DWord" /><Member Name="CRIT_OLD" Datatype="DWord" /><Member Name="CRIT_FLT" Datatype="DWord" /></Section></Sections></Member>
+    <Member Name="Products_ Zero" Datatype="GraphTransition" Version="1.0" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Transition structure</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="TV" Datatype="Bool" /><Member Name="TT" Datatype="Bool" /><Member Name="TS" Datatype="Bool" /><Member Name="CF_IV" Datatype="Bool" /><Member Name="TNO" Datatype="Int"><StartValue Informative="true">9</StartValue></Member><Member Name="CRIT" Datatype="DWord" /><Member Name="CRIT_OLD" Datatype="DWord" /><Member Name="CRIT_FLT" Datatype="DWord" /></Section></Sections></Member>
+    <Member Name="True" Datatype="GraphTransition" Version="1.0" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Transition structure</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="TV" Datatype="Bool" /><Member Name="TT" Datatype="Bool" /><Member Name="TS" Datatype="Bool" /><Member Name="CF_IV" Datatype="Bool" /><Member Name="TNO" Datatype="Int"><StartValue Informative="true">10</StartValue></Member><Member Name="CRIT" Datatype="DWord" /><Member Name="CRIT_OLD" Datatype="DWord" /><Member Name="CRIT_FLT" Datatype="DWord" /></Section></Sections></Member>
+    <Member Name="Stop Button" Datatype="GraphTransition" Version="1.0" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Transition structure</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="TV" Datatype="Bool" /><Member Name="TT" Datatype="Bool" /><Member Name="TS" Datatype="Bool" /><Member Name="CF_IV" Datatype="Bool" /><Member Name="TNO" Datatype="Int"><StartValue Informative="true">11</StartValue></Member><Member Name="CRIT" Datatype="DWord" /><Member Name="CRIT_OLD" Datatype="DWord" /><Member Name="CRIT_FLT" Datatype="DWord" /></Section></Sections></Member>
+    <Member Name="Init" Datatype="GraphStep" Version="1.0" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Step structure</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="S1" Datatype="Bool" /><Member Name="L1" Datatype="Bool" /><Member Name="V1" Datatype="Bool" /><Member Name="R1" Datatype="Bool" /><Member Name="A1" Datatype="Bool" /><Member Name="S0" Datatype="Bool" /><Member Name="L0" Datatype="Bool" /><Member Name="V0" Datatype="Bool" /><Member Name="X" Datatype="Bool" /><Member Name="LA" Datatype="Bool" /><Member Name="VA" Datatype="Bool" /><Member Name="RA" Datatype="Bool" /><Member Name="AA" Datatype="Bool" /><Member Name="SS" Datatype="Bool" /><Member Name="LS" Datatype="Bool" /><Member Name="VS" Datatype="Bool" /><Member Name="SNO" Datatype="Int"><StartValue Informative="true">1</StartValue></Member><Member Name="T" Datatype="Time" /><Member Name="U" Datatype="Time" /><Member Name="CRIT_LOC" Datatype="DWord" /><Member Name="CRIT_LOC_ERR" Datatype="DWord" /><Member Name="CRIT_SUP" Datatype="DWord" /><Member Name="SM" Datatype="Bool" /><Member Name="LP" Datatype="Bool" /><Member Name="LN" Datatype="Bool" /><Member Name="VP" Datatype="Bool" /><Member Name="VN" Datatype="Bool" /><Member Name="H_IL_ERR" Datatype="Byte" /><Member Name="H_SV_FLT" Datatype="Byte" /><Member Name="RESERVED" Datatype="DWord" /></Section></Sections></Member>
+    <Member Name="START" Datatype="GraphStep" Version="1.0" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Step structure</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="S1" Datatype="Bool" /><Member Name="L1" Datatype="Bool" /><Member Name="V1" Datatype="Bool" /><Member Name="R1" Datatype="Bool" /><Member Name="A1" Datatype="Bool" /><Member Name="S0" Datatype="Bool" /><Member Name="L0" Datatype="Bool" /><Member Name="V0" Datatype="Bool" /><Member Name="X" Datatype="Bool" /><Member Name="LA" Datatype="Bool" /><Member Name="VA" Datatype="Bool" /><Member Name="RA" Datatype="Bool" /><Member Name="AA" Datatype="Bool" /><Member Name="SS" Datatype="Bool" /><Member Name="LS" Datatype="Bool" /><Member Name="VS" Datatype="Bool" /><Member Name="SNO" Datatype="Int"><StartValue Informative="true">2</StartValue></Member><Member Name="T" Datatype="Time" /><Member Name="U" Datatype="Time" /><Member Name="CRIT_LOC" Datatype="DWord" /><Member Name="CRIT_LOC_ERR" Datatype="DWord" /><Member Name="CRIT_SUP" Datatype="DWord" /><Member Name="SM" Datatype="Bool" /><Member Name="LP" Datatype="Bool" /><Member Name="LN" Datatype="Bool" /><Member Name="VP" Datatype="Bool" /><Member Name="VN" Datatype="Bool" /><Member Name="H_IL_ERR" Datatype="Byte" /><Member Name="H_SV_FLT" Datatype="Byte" /><Member Name="RESERVED" Datatype="DWord" /></Section></Sections></Member>
+    <Member Name="Init Wals" Datatype="GraphStep" Version="1.0" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Step structure</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="S1" Datatype="Bool" /><Member Name="L1" Datatype="Bool" /><Member Name="V1" Datatype="Bool" /><Member Name="R1" Datatype="Bool" /><Member Name="A1" Datatype="Bool" /><Member Name="S0" Datatype="Bool" /><Member Name="L0" Datatype="Bool" /><Member Name="V0" Datatype="Bool" /><Member Name="X" Datatype="Bool" /><Member Name="LA" Datatype="Bool" /><Member Name="VA" Datatype="Bool" /><Member Name="RA" Datatype="Bool" /><Member Name="AA" Datatype="Bool" /><Member Name="SS" Datatype="Bool" /><Member Name="LS" Datatype="Bool" /><Member Name="VS" Datatype="Bool" /><Member Name="SNO" Datatype="Int"><StartValue Informative="true">3</StartValue></Member><Member Name="T" Datatype="Time" /><Member Name="U" Datatype="Time" /><Member Name="CRIT_LOC" Datatype="DWord" /><Member Name="CRIT_LOC_ERR" Datatype="DWord" /><Member Name="CRIT_SUP" Datatype="DWord" /><Member Name="SM" Datatype="Bool" /><Member Name="LP" Datatype="Bool" /><Member Name="LN" Datatype="Bool" /><Member Name="VP" Datatype="Bool" /><Member Name="VN" Datatype="Bool" /><Member Name="H_IL_ERR" Datatype="Byte" /><Member Name="H_SV_FLT" Datatype="Byte" /><Member Name="RESERVED" Datatype="DWord" /></Section></Sections></Member>
+    <Member Name="Count Products" Datatype="GraphStep" Version="1.0" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Step structure</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="S1" Datatype="Bool" /><Member Name="L1" Datatype="Bool" /><Member Name="V1" Datatype="Bool" /><Member Name="R1" Datatype="Bool" /><Member Name="A1" Datatype="Bool" /><Member Name="S0" Datatype="Bool" /><Member Name="L0" Datatype="Bool" /><Member Name="V0" Datatype="Bool" /><Member Name="X" Datatype="Bool" /><Member Name="LA" Datatype="Bool" /><Member Name="VA" Datatype="Bool" /><Member Name="RA" Datatype="Bool" /><Member Name="AA" Datatype="Bool" /><Member Name="SS" Datatype="Bool" /><Member Name="LS" Datatype="Bool" /><Member Name="VS" Datatype="Bool" /><Member Name="SNO" Datatype="Int"><StartValue Informative="true">5</StartValue></Member><Member Name="T" Datatype="Time" /><Member Name="U" Datatype="Time" /><Member Name="CRIT_LOC" Datatype="DWord" /><Member Name="CRIT_LOC_ERR" Datatype="DWord" /><Member Name="CRIT_SUP" Datatype="DWord" /><Member Name="SM" Datatype="Bool" /><Member Name="LP" Datatype="Bool" /><Member Name="LN" Datatype="Bool" /><Member Name="VP" Datatype="Bool" /><Member Name="VN" Datatype="Bool" /><Member Name="H_IL_ERR" Datatype="Byte" /><Member Name="H_SV_FLT" Datatype="Byte" /><Member Name="RESERVED" Datatype="DWord" /></Section></Sections></Member>
+    <Member Name="Products avaible" Datatype="GraphStep" Version="1.0" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Step structure</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="S1" Datatype="Bool" /><Member Name="L1" Datatype="Bool" /><Member Name="V1" Datatype="Bool" /><Member Name="R1" Datatype="Bool" /><Member Name="A1" Datatype="Bool" /><Member Name="S0" Datatype="Bool" /><Member Name="L0" Datatype="Bool" /><Member Name="V0" Datatype="Bool" /><Member Name="X" Datatype="Bool" /><Member Name="LA" Datatype="Bool" /><Member Name="VA" Datatype="Bool" /><Member Name="RA" Datatype="Bool" /><Member Name="AA" Datatype="Bool" /><Member Name="SS" Datatype="Bool" /><Member Name="LS" Datatype="Bool" /><Member Name="VS" Datatype="Bool" /><Member Name="SNO" Datatype="Int"><StartValue Informative="true">6</StartValue></Member><Member Name="T" Datatype="Time" /><Member Name="U" Datatype="Time" /><Member Name="CRIT_LOC" Datatype="DWord" /><Member Name="CRIT_LOC_ERR" Datatype="DWord" /><Member Name="CRIT_SUP" Datatype="DWord" /><Member Name="SM" Datatype="Bool" /><Member Name="LP" Datatype="Bool" /><Member Name="LN" Datatype="Bool" /><Member Name="VP" Datatype="Bool" /><Member Name="VN" Datatype="Bool" /><Member Name="H_IL_ERR" Datatype="Byte" /><Member Name="H_SV_FLT" Datatype="Byte" /><Member Name="RESERVED" Datatype="DWord" /></Section></Sections></Member>
+    <Member Name="Wals Pos 2" Datatype="GraphStep" Version="1.0" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Step structure</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="S1" Datatype="Bool" /><Member Name="L1" Datatype="Bool" /><Member Name="V1" Datatype="Bool" /><Member Name="R1" Datatype="Bool" /><Member Name="A1" Datatype="Bool" /><Member Name="S0" Datatype="Bool" /><Member Name="L0" Datatype="Bool" /><Member Name="V0" Datatype="Bool" /><Member Name="X" Datatype="Bool" /><Member Name="LA" Datatype="Bool" /><Member Name="VA" Datatype="Bool" /><Member Name="RA" Datatype="Bool" /><Member Name="AA" Datatype="Bool" /><Member Name="SS" Datatype="Bool" /><Member Name="LS" Datatype="Bool" /><Member Name="VS" Datatype="Bool" /><Member Name="SNO" Datatype="Int"><StartValue Informative="true">7</StartValue></Member><Member Name="T" Datatype="Time" /><Member Name="U" Datatype="Time" /><Member Name="CRIT_LOC" Datatype="DWord" /><Member Name="CRIT_LOC_ERR" Datatype="DWord" /><Member Name="CRIT_SUP" Datatype="DWord" /><Member Name="SM" Datatype="Bool" /><Member Name="LP" Datatype="Bool" /><Member Name="LN" Datatype="Bool" /><Member Name="VP" Datatype="Bool" /><Member Name="VN" Datatype="Bool" /><Member Name="H_IL_ERR" Datatype="Byte" /><Member Name="H_SV_FLT" Datatype="Byte" /><Member Name="RESERVED" Datatype="DWord" /></Section></Sections></Member>
+    <Member Name="Back Pos 1" Datatype="GraphStep" Version="1.0" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Step structure</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="S1" Datatype="Bool" /><Member Name="L1" Datatype="Bool" /><Member Name="V1" Datatype="Bool" /><Member Name="R1" Datatype="Bool" /><Member Name="A1" Datatype="Bool" /><Member Name="S0" Datatype="Bool" /><Member Name="L0" Datatype="Bool" /><Member Name="V0" Datatype="Bool" /><Member Name="X" Datatype="Bool" /><Member Name="LA" Datatype="Bool" /><Member Name="VA" Datatype="Bool" /><Member Name="RA" Datatype="Bool" /><Member Name="AA" Datatype="Bool" /><Member Name="SS" Datatype="Bool" /><Member Name="LS" Datatype="Bool" /><Member Name="VS" Datatype="Bool" /><Member Name="SNO" Datatype="Int"><StartValue Informative="true">8</StartValue></Member><Member Name="T" Datatype="Time" /><Member Name="U" Datatype="Time" /><Member Name="CRIT_LOC" Datatype="DWord" /><Member Name="CRIT_LOC_ERR" Datatype="DWord" /><Member Name="CRIT_SUP" Datatype="DWord" /><Member Name="SM" Datatype="Bool" /><Member Name="LP" Datatype="Bool" /><Member Name="LN" Datatype="Bool" /><Member Name="VP" Datatype="Bool" /><Member Name="VN" Datatype="Bool" /><Member Name="H_IL_ERR" Datatype="Byte" /><Member Name="H_SV_FLT" Datatype="Byte" /><Member Name="RESERVED" Datatype="DWord" /></Section></Sections></Member>
+    <Member Name="End Program" Datatype="GraphStep" Version="1.0" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Step structure</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="S1" Datatype="Bool" /><Member Name="L1" Datatype="Bool" /><Member Name="V1" Datatype="Bool" /><Member Name="R1" Datatype="Bool" /><Member Name="A1" Datatype="Bool" /><Member Name="S0" Datatype="Bool" /><Member Name="L0" Datatype="Bool" /><Member Name="V0" Datatype="Bool" /><Member Name="X" Datatype="Bool" /><Member Name="LA" Datatype="Bool" /><Member Name="VA" Datatype="Bool" /><Member Name="RA" Datatype="Bool" /><Member Name="AA" Datatype="Bool" /><Member Name="SS" Datatype="Bool" /><Member Name="LS" Datatype="Bool" /><Member Name="VS" Datatype="Bool" /><Member Name="SNO" Datatype="Int"><StartValue Informative="true">9</StartValue></Member><Member Name="T" Datatype="Time" /><Member Name="U" Datatype="Time" /><Member Name="CRIT_LOC" Datatype="DWord" /><Member Name="CRIT_LOC_ERR" Datatype="DWord" /><Member Name="CRIT_SUP" Datatype="DWord" /><Member Name="SM" Datatype="Bool" /><Member Name="LP" Datatype="Bool" /><Member Name="LN" Datatype="Bool" /><Member Name="VP" Datatype="Bool" /><Member Name="VN" Datatype="Bool" /><Member Name="H_IL_ERR" Datatype="Byte" /><Member Name="H_SV_FLT" Datatype="Byte" /><Member Name="RESERVED" Datatype="DWord" /></Section></Sections></Member>
+    <Member Name="Stop all axis" Datatype="GraphStep" Version="1.0" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Step structure</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="S1" Datatype="Bool" /><Member Name="L1" Datatype="Bool" /><Member Name="V1" Datatype="Bool" /><Member Name="R1" Datatype="Bool" /><Member Name="A1" Datatype="Bool" /><Member Name="S0" Datatype="Bool" /><Member Name="L0" Datatype="Bool" /><Member Name="V0" Datatype="Bool" /><Member Name="X" Datatype="Bool" /><Member Name="LA" Datatype="Bool" /><Member Name="VA" Datatype="Bool" /><Member Name="RA" Datatype="Bool" /><Member Name="AA" Datatype="Bool" /><Member Name="SS" Datatype="Bool" /><Member Name="LS" Datatype="Bool" /><Member Name="VS" Datatype="Bool" /><Member Name="SNO" Datatype="Int"><StartValue Informative="true">10</StartValue></Member><Member Name="T" Datatype="Time" /><Member Name="U" Datatype="Time" /><Member Name="CRIT_LOC" Datatype="DWord" /><Member Name="CRIT_LOC_ERR" Datatype="DWord" /><Member Name="CRIT_SUP" Datatype="DWord" /><Member Name="SM" Datatype="Bool" /><Member Name="LP" Datatype="Bool" /><Member Name="LN" Datatype="Bool" /><Member Name="VP" Datatype="Bool" /><Member Name="VN" Datatype="Bool" /><Member Name="H_IL_ERR" Datatype="Byte" /><Member Name="H_SV_FLT" Datatype="Byte" /><Member Name="RESERVED" Datatype="DWord" /></Section></Sections></Member>
+    <Member Name="S_DISPLAY" Datatype="Int" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Internal display of output parameter S_NO</MultiLanguageText></Comment></Member>
+    <Member Name="S_SEL_OLD" Datatype="Int" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Previous value in S_SEL</MultiLanguageText></Comment></Member>
+    <Member Name="S_DISPIDX" Datatype="Byte" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Index of the step in S_NO</MultiLanguageText></Comment></Member>
+    <Member Name="T_DISPIDX" Datatype="Byte" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Index of the transition displayed in T_NO</MultiLanguageText></Comment></Member>
+    <Member Name="MOP" Datatype="Struct" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Mode</MultiLanguageText></Comment><Member Name="AUTO" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Status: automatic mode</MultiLanguageText></Comment><StartValue Informative="true">true</StartValue></Member><Member Name="MAN" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Status: manual mode</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="TAP" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Status: semi automatic/switch with transition</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="TOP" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Status: semi automatic/ignore transition</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="ACK_S" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Request: acknowledge step at parameter S_NO</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="REG_S" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Request: register step indicated in S_NO</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="T_PREV" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Request: output previous valid transition in T_NO</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="T_NEXT" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Request: output next valid transition in T_NO</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="LOCK" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Status: interlocks activated</MultiLanguageText></Comment><StartValue Informative="true">true</StartValue></Member><Member Name="SUP" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Status: supervisions activated</MultiLanguageText></Comment><StartValue Informative="true">true</StartValue></Member><Member Name="ACKREQ" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Status: acknowledgment required</MultiLanguageText></Comment><StartValue Informative="true">true</StartValue></Member><Member Name="SSKIP" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Status: "Skip steps" enabled</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="OFF" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Request: deactivate all steps</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="INIT" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Request: set sequence to initial state</MultiLanguageText></Comment><StartValue Informative="true">true</StartValue></Member><Member Name="HALT" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Status: sequence halted</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="TMS_HALT" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Status: all internal timers held</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="OPS_ZERO" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Status: set all operands processed with N, L, D instructions to 0</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="SACT_DISP" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Status: display active steps only</MultiLanguageText></Comment><StartValue Informative="true">true</StartValue></Member><Member Name="SEF_DISP" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Status: display only steps with errors and disrupted steps</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="SALL_DISP" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Status: display all steps</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="S_PREV" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Request: output previous step to S_NO</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="S_NEXT" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Request: Output next step at S_NO parameter</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="S_SELOK" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Request: output step number from S_SEL to S_NO</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="S_ON" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Request: activate step indicated in S_NO</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="S_OFF" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Request: deactivate step at parameter S_NO</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="T_PUSH" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Request: transition switching enabled</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="REG" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Request: register all interlock and supervision errors</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="ACK" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Request: acknowledge all interlock and supervision errors</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="IL_PERM" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Status: permanent processing of all interlocks</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="T_PERM" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Status: permanent processing of all transitions</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="ILP_MAN" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Status: permanent processing of all interlocks in manual mode</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member></Member>
+    <Member Name="TICKS" Datatype="Struct" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Clock speeds</MultiLanguageText></Comment><Member Name="DELTA" Datatype="Time"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Time difference between cycles</MultiLanguageText></Comment><StartValue Informative="true">T#0ms</StartValue></Member><Member Name="OLD" Datatype="Time"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">10 ms clock counter value in last cycle</MultiLanguageText></Comment><StartValue Informative="true">T#0ms</StartValue></Member><Member Name="NEW" Datatype="Time"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">10 ms clock counter value in this cycle</MultiLanguageText></Comment><StartValue Informative="true">T#0ms</StartValue></Member></Member>
+    <Member Name="SQ_FLAGS" Datatype="Struct" Remanence="SetInIDB"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Sequence bit memory</MultiLanguageText></Comment><Member Name="ERR_FLT" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Interlock and supervision group error</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="ERROR" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Interlock group error</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="FAULT" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Supervision group error</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="RT_FAIL" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Runtime error</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="NO_SNO" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Requested step number not found</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="NF_OFL" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Overflow: too many ON or OFF requests</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="SA_OFL" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Overflow: too many steps active</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="TV_OFL" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Overflow: too many valid transitions</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="MSG_OFL" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Overflow: not enough system resources for ALARM_S</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="NO_SWI" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Do not switch in this cycle</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="CYC_OP" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Cyclic execution of the sequence after initialization</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="AS_MSG" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Alarms during runtime enabled or disabled by instruction</MultiLanguageText></Comment><StartValue Informative="true">true</StartValue></Member><Member Name="AS_SEND" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Send alarms from WR_USMSG or only enter in diagnostics buffer</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="SQ_BUSY" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Internal edge memory bit for sequence processing</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="SA_BUSY" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Internal edge memory bit for sequence processing</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member><Member Name="AS_SIG" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" Informative="true" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment Informative="true"><MultiLanguageText Lang="nl-NL">Edge memory bit for alarms from Alarm_S and Alarm_SQ</MultiLanguageText></Comment><StartValue Informative="true">false</StartValue></Member></Member>
+  </Section>
+  <Section Name="Temp" />
+  <Section Name="Constant" />
+</Sections></Interface>
+      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <LanguageInNetworks>LAD</LanguageInNetworks>
+      <LockOperatingMode>false</LockOperatingMode>
+      <Name>Programma 1 - Test</Name>
+      <Number>12</Number>
+      <PermanentILProcessingInMANMode>false</PermanentILProcessingInMANMode>
+      <ProgrammingLanguage>GRAPH</ProgrammingLanguage>
+      <SkipSteps>false</SkipSteps>
+      <UDABlockProperties />
+      <UDAEnableTagReadback>false</UDAEnableTagReadback>
+      <WithAlarmHandling>true</WithAlarmHandling>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>nl-NL</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><Graph xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/Graph/v5">
+  <PreOperations>
+    <PermanentOperation ProgrammingLanguage="LAD" />
+  </PreOperations>
+  <Sequence>
+    <Title>
+      <MultiLanguageText Lang="nl-NL">SFC Program</MultiLanguageText>
+    </Title>
+    <Comment>
+      <MultiLanguageText Lang="nl-NL" />
+    </Comment>
+    <Steps>
+      <Step Number="1" Init="true" Name="Init">
+        <Actions>
+          <Action Qualifier="R">
+            <Token Text="&quot;PositionManagement&quot;.Demo_Pos.Start" />
+            <Token Text="&#xA;" />
+          </Action>
+          <Action>
+            <Token Text="&#xA;" />
+          </Action>
+          <Action>
+            <Token Text="&#xA;" />
+          </Action>
+          <Action />
+        </Actions>
+        <Supervisions>
+          <Supervision ProgrammingLanguage="LAD">
+            <FlgNet>
+              <Parts>
+                <Part Name="SvCoil" UId="21" />
+              </Parts>
+              <Wires>
+                <Wire UId="22">
+                  <Powerrail />
+                  <NameCon UId="21" Name="in" />
+                </Wire>
+              </Wires>
+            </FlgNet>
+          </Supervision>
+        </Supervisions>
+        <Interlocks>
+          <Interlock ProgrammingLanguage="LAD">
+            <FlgNet>
+              <Parts>
+                <Part Name="IlCoil" UId="21" />
+              </Parts>
+              <Wires>
+                <Wire UId="22">
+                  <Powerrail />
+                  <NameCon UId="21" Name="in" />
+                </Wire>
+              </Wires>
+            </FlgNet>
+          </Interlock>
+        </Interlocks>
+      </Step>
+      <Step Number="2" Init="false" Name="START">
+        <Actions>
+          <Title>
+            <MultiLanguageText Lang="nl-NL">Set Ouputs</MultiLanguageText>
+          </Title>
+          <Action Qualifier="S">
+            <Token Text="&quot;Drive_1_Auto&quot;" />
+            <Token Text="&#xA;" />
+          </Action>
+          <Action Qualifier="S">
+            <Token Text="&quot;Drive_2_Auto&quot;" />
+            <Token Text="&#xA;" />
+          </Action>
+          <Action Qualifier="S">
+            <Token Text="&quot;PositionManagement&quot;.Demo_Pos.Start" />
+            <Token Text="&#xA;" />
+          </Action>
+          <Action />
+        </Actions>
+        <Supervisions>
+          <Supervision ProgrammingLanguage="LAD">
+            <FlgNet>
+              <Parts>
+                <Part Name="SvCoil" UId="21" />
+              </Parts>
+              <Wires>
+                <Wire UId="22">
+                  <Powerrail />
+                  <NameCon UId="21" Name="in" />
+                </Wire>
+              </Wires>
+            </FlgNet>
+          </Supervision>
+        </Supervisions>
+        <Interlocks>
+          <Interlock ProgrammingLanguage="LAD">
+            <FlgNet>
+              <Parts>
+                <Part Name="IlCoil" UId="21" />
+              </Parts>
+              <Wires>
+                <Wire UId="22">
+                  <Powerrail />
+                  <NameCon UId="21" Name="in" />
+                </Wire>
+              </Wires>
+            </FlgNet>
+          </Interlock>
+        </Interlocks>
+      </Step>
+      <Step Number="3" Init="false" Name="Init Wals">
+        <Actions>
+          <Title>
+            <MultiLanguageText Lang="nl-NL">Move Start Position4</MultiLanguageText>
+          </Title>
+          <Action Qualifier="N">
+            <Token Text="#&quot;Move Position 1&quot;" />
+            <Token Text="&#xA;" />
+          </Action>
+          <Action />
+        </Actions>
+        <Supervisions>
+          <Supervision ProgrammingLanguage="LAD">
+            <FlgNet>
+              <Parts>
+                <Part Name="SvCoil" UId="21" />
+              </Parts>
+              <Wires>
+                <Wire UId="22">
+                  <Powerrail />
+                  <NameCon UId="21" Name="in" />
+                </Wire>
+              </Wires>
+            </FlgNet>
+          </Supervision>
+        </Supervisions>
+        <Interlocks>
+          <Interlock ProgrammingLanguage="LAD">
+            <FlgNet>
+              <Parts>
+                <Part Name="IlCoil" UId="21" />
+              </Parts>
+              <Wires>
+                <Wire UId="22">
+                  <Powerrail />
+                  <NameCon UId="21" Name="in" />
+                </Wire>
+              </Wires>
+            </FlgNet>
+          </Interlock>
+        </Interlocks>
+      </Step>
+      <Step Number="5" Init="false" Name="Count Products">
+        <Actions>
+          <Action />
+        </Actions>
+        <Supervisions>
+          <Supervision ProgrammingLanguage="LAD">
+            <FlgNet>
+              <Parts>
+                <Part Name="SvCoil" UId="21" />
+              </Parts>
+              <Wires>
+                <Wire UId="22">
+                  <Powerrail />
+                  <NameCon UId="21" Name="in" />
+                </Wire>
+              </Wires>
+            </FlgNet>
+          </Supervision>
+        </Supervisions>
+        <Interlocks>
+          <Interlock ProgrammingLanguage="LAD">
+            <FlgNet>
+              <Parts>
+                <Part Name="IlCoil" UId="21" />
+              </Parts>
+              <Wires>
+                <Wire UId="22">
+                  <Powerrail />
+                  <NameCon UId="21" Name="in" />
+                </Wire>
+              </Wires>
+            </FlgNet>
+          </Interlock>
+        </Interlocks>
+      </Step>
+      <Step Number="6" Init="false" Name="Products avaible">
+        <Actions>
+          <Action />
+        </Actions>
+        <Supervisions>
+          <Supervision ProgrammingLanguage="LAD">
+            <FlgNet>
+              <Parts>
+                <Part Name="SvCoil" UId="21" />
+              </Parts>
+              <Wires>
+                <Wire UId="22">
+                  <Powerrail />
+                  <NameCon UId="21" Name="in" />
+                </Wire>
+              </Wires>
+            </FlgNet>
+          </Supervision>
+        </Supervisions>
+        <Interlocks>
+          <Interlock ProgrammingLanguage="LAD">
+            <FlgNet>
+              <Parts>
+                <Part Name="IlCoil" UId="21" />
+              </Parts>
+              <Wires>
+                <Wire UId="22">
+                  <Powerrail />
+                  <NameCon UId="21" Name="in" />
+                </Wire>
+              </Wires>
+            </FlgNet>
+          </Interlock>
+        </Interlocks>
+      </Step>
+      <Step Number="7" Init="false" Name="Wals Pos 2">
+        <Actions>
+          <Action Qualifier="N">
+            <Token Text="#&quot;Move Position 2&quot;" />
+            <Token Text="&#xA;" />
+          </Action>
+          <Action />
+        </Actions>
+        <Supervisions>
+          <Supervision ProgrammingLanguage="LAD">
+            <FlgNet>
+              <Parts>
+                <Part Name="SvCoil" UId="21" />
+              </Parts>
+              <Wires>
+                <Wire UId="22">
+                  <Powerrail />
+                  <NameCon UId="21" Name="in" />
+                </Wire>
+              </Wires>
+            </FlgNet>
+          </Supervision>
+        </Supervisions>
+        <Interlocks>
+          <Interlock ProgrammingLanguage="LAD">
+            <FlgNet>
+              <Parts>
+                <Part Name="IlCoil" UId="21" />
+              </Parts>
+              <Wires>
+                <Wire UId="22">
+                  <Powerrail />
+                  <NameCon UId="21" Name="in" />
+                </Wire>
+              </Wires>
+            </FlgNet>
+          </Interlock>
+        </Interlocks>
+      </Step>
+      <Step Number="8" Init="false" Name="Back Pos 1">
+        <Actions>
+          <Title>
+            <MultiLanguageText Lang="nl-NL">Move Position 1</MultiLanguageText>
+          </Title>
+          <Action Qualifier="N">
+            <Token Text="#&quot;Move Position 1&quot;" />
+            <Token Text="&#xA;" />
+          </Action>
+          <Action />
+        </Actions>
+        <Supervisions>
+          <Supervision ProgrammingLanguage="LAD">
+            <FlgNet>
+              <Parts>
+                <Part Name="SvCoil" UId="21" />
+              </Parts>
+              <Wires>
+                <Wire UId="22">
+                  <Powerrail />
+                  <NameCon UId="21" Name="in" />
+                </Wire>
+              </Wires>
+            </FlgNet>
+          </Supervision>
+        </Supervisions>
+        <Interlocks>
+          <Interlock ProgrammingLanguage="LAD">
+            <FlgNet>
+              <Parts>
+                <Part Name="IlCoil" UId="21" />
+              </Parts>
+              <Wires>
+                <Wire UId="22">
+                  <Powerrail />
+                  <NameCon UId="21" Name="in" />
+                </Wire>
+              </Wires>
+            </FlgNet>
+          </Interlock>
+        </Interlocks>
+      </Step>
+      <Step Number="9" Init="false" Name="End Program">
+        <Actions>
+          <Action />
+        </Actions>
+        <Supervisions>
+          <Supervision ProgrammingLanguage="LAD">
+            <FlgNet>
+              <Parts>
+                <Part Name="SvCoil" UId="21" />
+              </Parts>
+              <Wires>
+                <Wire UId="22">
+                  <Powerrail />
+                  <NameCon UId="21" Name="in" />
+                </Wire>
+              </Wires>
+            </FlgNet>
+          </Supervision>
+        </Supervisions>
+        <Interlocks>
+          <Interlock ProgrammingLanguage="LAD">
+            <FlgNet>
+              <Parts>
+                <Part Name="IlCoil" UId="21" />
+              </Parts>
+              <Wires>
+                <Wire UId="22">
+                  <Powerrail />
+                  <NameCon UId="21" Name="in" />
+                </Wire>
+              </Wires>
+            </FlgNet>
+          </Interlock>
+        </Interlocks>
+      </Step>
+      <Step Number="10" Init="false" Name="Stop all axis">
+        <Actions>
+          <Title>
+            <MultiLanguageText Lang="nl-NL">Reset Axis</MultiLanguageText>
+          </Title>
+          <Action Qualifier="R">
+            <Token Text="&quot;Drive_1_Auto&quot;" />
+            <Token Text="&#xA;" />
+            <Token Text="&#xA;" />
+          </Action>
+          <Action Qualifier="R">
+            <Token Text="&quot;Drive_2_Auto&quot;" />
+            <Token Text="&#xA;" />
+            <Token Text="&#xA;" />
+          </Action>
+          <Action Qualifier="R">
+            <Token Text="&quot;PositionManagement&quot;.Demo_Pos.Start" />
+            <Token Text="&#xA;" />
+          </Action>
+          <Action />
+        </Actions>
+        <Supervisions>
+          <Supervision ProgrammingLanguage="LAD">
+            <FlgNet>
+              <Parts>
+                <Part Name="SvCoil" UId="21" />
+              </Parts>
+              <Wires>
+                <Wire UId="22">
+                  <Powerrail />
+                  <NameCon UId="21" Name="in" />
+                </Wire>
+              </Wires>
+            </FlgNet>
+          </Supervision>
+        </Supervisions>
+        <Interlocks>
+          <Interlock ProgrammingLanguage="LAD">
+            <FlgNet>
+              <Parts>
+                <Part Name="IlCoil" UId="21" />
+              </Parts>
+              <Wires>
+                <Wire UId="22">
+                  <Powerrail />
+                  <NameCon UId="21" Name="in" />
+                </Wire>
+              </Wires>
+            </FlgNet>
+          </Interlock>
+        </Interlocks>
+      </Step>
+    </Steps>
+    <Transitions>
+      <Transition IsMissing="false" Name="System RUN" Number="1" ProgrammingLanguage="LAD">
+        <FlgNet>
+          <Parts>
+            <Access Scope="GlobalVariable" UId="21">
+              <Symbol>
+                <Component Name="Systeem RUN" />
+              </Symbol>
+            </Access>
+            <Part Name="Contact" UId="22" />
+            <Part Name="TrCoil" UId="23" />
+          </Parts>
+          <Wires>
+            <Wire UId="24">
+              <Powerrail />
+              <NameCon UId="22" Name="in" />
+            </Wire>
+            <Wire UId="25">
+              <IdentCon UId="21" />
+              <NameCon UId="22" Name="operand" />
+            </Wire>
+            <Wire UId="26">
+              <NameCon UId="22" Name="out" />
+              <NameCon UId="23" Name="in" />
+            </Wire>
+          </Wires>
+        </FlgNet>
+      </Transition>
+      <Transition IsMissing="false" Name="Drive Enabled" Number="2" ProgrammingLanguage="LAD">
+        <FlgNet>
+          <Parts>
+            <Access Scope="GlobalVariable" UId="21">
+              <Symbol>
+                <Component Name="PositionManagement" />
+                <Component Name="Demo_Pos" />
+                <Component Name="Start" />
+              </Symbol>
+            </Access>
+            <Part Name="Contact" UId="22" />
+            <Part Name="TrCoil" UId="23" />
+          </Parts>
+          <Wires>
+            <Wire UId="24">
+              <Powerrail />
+              <NameCon UId="22" Name="in" />
+            </Wire>
+            <Wire UId="25">
+              <IdentCon UId="21" />
+              <NameCon UId="22" Name="operand" />
+            </Wire>
+            <Wire UId="26">
+              <NameCon UId="22" Name="out" />
+              <NameCon UId="23" Name="in" />
+            </Wire>
+          </Wires>
+        </FlgNet>
+      </Transition>
+      <Transition IsMissing="false" Name="Conf Pos 1" Number="3" ProgrammingLanguage="LAD">
+        <FlgNet>
+          <Parts>
+            <Access Scope="LocalVariable" UId="21">
+              <Symbol>
+                <Component Name="Confimation Position 1" />
+              </Symbol>
+            </Access>
+            <Part Name="Contact" UId="22" />
+            <Part Name="TrCoil" UId="23" />
+          </Parts>
+          <Wires>
+            <Wire UId="24">
+              <Powerrail />
+              <NameCon UId="22" Name="in" />
+            </Wire>
+            <Wire UId="25">
+              <IdentCon UId="21" />
+              <NameCon UId="22" Name="operand" />
+            </Wire>
+            <Wire UId="26">
+              <NameCon UId="22" Name="out" />
+              <NameCon UId="23" Name="in" />
+            </Wire>
+          </Wires>
+        </FlgNet>
+      </Transition>
+      <Transition IsMissing="false" Name="Prod More than zero" Number="4" ProgrammingLanguage="LAD">
+        <FlgNet>
+          <Parts>
+            <Access Scope="LocalVariable" UId="21">
+              <Symbol>
+                <Component Name="Products more than zero" />
+              </Symbol>
+            </Access>
+            <Part Name="Contact" UId="22" />
+            <Part Name="TrCoil" UId="23" />
+          </Parts>
+          <Wires>
+            <Wire UId="24">
+              <Powerrail />
+              <NameCon UId="22" Name="in" />
+            </Wire>
+            <Wire UId="25">
+              <IdentCon UId="21" />
+              <NameCon UId="22" Name="operand" />
+            </Wire>
+            <Wire UId="26">
+              <NameCon UId="22" Name="out" />
+              <NameCon UId="23" Name="in" />
+            </Wire>
+          </Wires>
+        </FlgNet>
+      </Transition>
+      <Transition IsMissing="false" Name="Timer" Number="5" ProgrammingLanguage="LAD">
+        <Comment>
+          <MultiLanguageText Lang="nl-NL">Timer 1</MultiLanguageText>
+        </Comment>
+        <FlgNet>
+          <Parts>
+            <Access Scope="LocalVariable" UId="21">
+              <Symbol>
+                <Component Name="Products avaible" />
+                <Component Name="U" />
+              </Symbol>
+            </Access>
+            <Access Scope="LocalVariable" UId="22">
+              <Symbol>
+                <Component Name="Timer 1" />
+              </Symbol>
+            </Access>
+            <Part Name="Gt" UId="23">
+              <TemplateValue Name="SrcType" Type="Type">Time</TemplateValue>
+            </Part>
+            <Part Name="TrCoil" UId="24" />
+          </Parts>
+          <Wires>
+            <Wire UId="25">
+              <Powerrail />
+              <NameCon UId="23" Name="pre" />
+            </Wire>
+            <Wire UId="26">
+              <IdentCon UId="21" />
+              <NameCon UId="23" Name="in1" />
+            </Wire>
+            <Wire UId="27">
+              <IdentCon UId="22" />
+              <NameCon UId="23" Name="in2" />
+            </Wire>
+            <Wire UId="28">
+              <NameCon UId="23" Name="out" />
+              <NameCon UId="24" Name="in" />
+            </Wire>
+          </Wires>
+        </FlgNet>
+      </Transition>
+      <Transition IsMissing="false" Name="Conf Pos 2" Number="6" ProgrammingLanguage="LAD">
+        <FlgNet>
+          <Parts>
+            <Access Scope="LocalVariable" UId="21">
+              <Symbol>
+                <Component Name="Confirmation Position 2" />
+              </Symbol>
+            </Access>
+            <Part Name="Contact" UId="22" />
+            <Part Name="TrCoil" UId="23" />
+          </Parts>
+          <Wires>
+            <Wire UId="24">
+              <Powerrail />
+              <NameCon UId="22" Name="in" />
+            </Wire>
+            <Wire UId="25">
+              <IdentCon UId="21" />
+              <NameCon UId="22" Name="operand" />
+            </Wire>
+            <Wire UId="26">
+              <NameCon UId="22" Name="out" />
+              <NameCon UId="23" Name="in" />
+            </Wire>
+          </Wires>
+        </FlgNet>
+      </Transition>
+      <Transition IsMissing="false" Name="Confirmation Pos 1" Number="7" ProgrammingLanguage="LAD">
+        <Comment>
+          <MultiLanguageText Lang="nl-NL">Conf Pos 1</MultiLanguageText>
+        </Comment>
+        <FlgNet>
+          <Parts>
+            <Access Scope="LocalVariable" UId="21">
+              <Symbol>
+                <Component Name="Confimation Position 1" />
+              </Symbol>
+            </Access>
+            <Part Name="Contact" UId="22" />
+            <Part Name="TrCoil" UId="23" />
+          </Parts>
+          <Wires>
+            <Wire UId="24">
+              <Powerrail />
+              <NameCon UId="22" Name="in" />
+            </Wire>
+            <Wire UId="25">
+              <IdentCon UId="21" />
+              <NameCon UId="22" Name="operand" />
+            </Wire>
+            <Wire UId="26">
+              <NameCon UId="22" Name="out" />
+              <NameCon UId="23" Name="in" />
+            </Wire>
+          </Wires>
+        </FlgNet>
+      </Transition>
+      <Transition IsMissing="false" Name="Conf Side" Number="8" ProgrammingLanguage="LAD">
+        <FlgNet>
+          <Parts>
+            <Access Scope="LocalVariable" UId="21">
+              <Symbol>
+                <Component Name="Confimation Position 1" />
+              </Symbol>
+            </Access>
+            <Part Name="Contact" UId="22" />
+            <Part Name="TrCoil" UId="23" />
+          </Parts>
+          <Wires>
+            <Wire UId="24">
+              <Powerrail />
+              <NameCon UId="22" Name="in" />
+            </Wire>
+            <Wire UId="25">
+              <IdentCon UId="21" />
+              <NameCon UId="22" Name="operand" />
+            </Wire>
+            <Wire UId="26">
+              <NameCon UId="22" Name="out" />
+              <NameCon UId="23" Name="in" />
+            </Wire>
+          </Wires>
+        </FlgNet>
+      </Transition>
+      <Transition IsMissing="false" Name="Products_ Zero" Number="9" ProgrammingLanguage="LAD">
+        <FlgNet>
+          <Parts>
+            <Access Scope="LocalVariable" UId="21">
+              <Symbol>
+                <Component Name="Products zero" />
+              </Symbol>
+            </Access>
+            <Part Name="Contact" UId="22" />
+            <Part Name="TrCoil" UId="23" />
+          </Parts>
+          <Wires>
+            <Wire UId="24">
+              <Powerrail />
+              <NameCon UId="22" Name="in" />
+            </Wire>
+            <Wire UId="25">
+              <IdentCon UId="21" />
+              <NameCon UId="22" Name="operand" />
+            </Wire>
+            <Wire UId="26">
+              <NameCon UId="22" Name="out" />
+              <NameCon UId="23" Name="in" />
+            </Wire>
+          </Wires>
+        </FlgNet>
+      </Transition>
+      <Transition IsMissing="false" Name="True" Number="10" ProgrammingLanguage="LAD">
+        <FlgNet>
+          <Parts>
+            <Part Name="TrCoil" UId="21" />
+          </Parts>
+          <Wires>
+            <Wire UId="22">
+              <Powerrail />
+              <NameCon UId="21" Name="in" />
+            </Wire>
+          </Wires>
+        </FlgNet>
+      </Transition>
+      <Transition IsMissing="false" Name="Stop Button" Number="11" ProgrammingLanguage="LAD">
+        <FlgNet>
+          <Parts>
+            <Access Scope="GlobalVariable" UId="21">
+              <Symbol>
+                <Component Name="Stop Machine" />
+              </Symbol>
+            </Access>
+            <Part Name="Contact" UId="22">
+              <Negated Name="operand" />
+            </Part>
+            <Part Name="TrCoil" UId="23" />
+          </Parts>
+          <Wires>
+            <Wire UId="24">
+              <Powerrail />
+              <NameCon UId="22" Name="in" />
+            </Wire>
+            <Wire UId="25">
+              <IdentCon UId="21" />
+              <NameCon UId="22" Name="operand" />
+            </Wire>
+            <Wire UId="26">
+              <NameCon UId="22" Name="out" />
+              <NameCon UId="23" Name="in" />
+            </Wire>
+          </Wires>
+        </FlgNet>
+      </Transition>
+    </Transitions>
+    <Branches>
+      <Branch Number="1" Type="AltBegin" Cardinality="2" />
+      <Branch Number="2" Type="AltBegin" Cardinality="2" />
+    </Branches>
+    <Connections>
+      <Connection>
+        <NodeFrom>
+          <StepRef Number="1" />
+        </NodeFrom>
+        <NodeTo>
+          <TransitionRef Number="1" />
+        </NodeTo>
+        <LinkType>Direct</LinkType>
+      </Connection>
+      <Connection>
+        <NodeFrom>
+          <TransitionRef Number="1" />
+        </NodeFrom>
+        <NodeTo>
+          <StepRef Number="2" />
+        </NodeTo>
+        <LinkType>Direct</LinkType>
+      </Connection>
+      <Connection>
+        <NodeFrom>
+          <StepRef Number="2" />
+        </NodeFrom>
+        <NodeTo>
+          <TransitionRef Number="2" />
+        </NodeTo>
+        <LinkType>Direct</LinkType>
+      </Connection>
+      <Connection>
+        <NodeFrom>
+          <TransitionRef Number="2" />
+        </NodeFrom>
+        <NodeTo>
+          <StepRef Number="3" />
+        </NodeTo>
+        <LinkType>Direct</LinkType>
+      </Connection>
+      <Connection>
+        <NodeFrom>
+          <StepRef Number="5" />
+        </NodeFrom>
+        <NodeTo>
+          <TransitionRef Number="4" />
+        </NodeTo>
+        <LinkType>Direct</LinkType>
+      </Connection>
+      <Connection>
+        <NodeFrom>
+          <TransitionRef Number="4" />
+        </NodeFrom>
+        <NodeTo>
+          <StepRef Number="6" />
+        </NodeTo>
+        <LinkType>Direct</LinkType>
+      </Connection>
+      <Connection>
+        <NodeFrom>
+          <StepRef Number="6" />
+        </NodeFrom>
+        <NodeTo>
+          <TransitionRef Number="5" />
+        </NodeTo>
+        <LinkType>Direct</LinkType>
+      </Connection>
+      <Connection>
+        <NodeFrom>
+          <TransitionRef Number="5" />
+        </NodeFrom>
+        <NodeTo>
+          <StepRef Number="7" />
+        </NodeTo>
+        <LinkType>Direct</LinkType>
+      </Connection>
+      <Connection>
+        <NodeFrom>
+          <StepRef Number="7" />
+        </NodeFrom>
+        <NodeTo>
+          <TransitionRef Number="6" />
+        </NodeTo>
+        <LinkType>Direct</LinkType>
+      </Connection>
+      <Connection>
+        <NodeFrom>
+          <TransitionRef Number="6" />
+        </NodeFrom>
+        <NodeTo>
+          <StepRef Number="8" />
+        </NodeTo>
+        <LinkType>Direct</LinkType>
+      </Connection>
+      <Connection>
+        <NodeFrom>
+          <TransitionRef Number="3" />
+        </NodeFrom>
+        <NodeTo>
+          <StepRef Number="5" />
+        </NodeTo>
+        <LinkType>Direct</LinkType>
+      </Connection>
+      <Connection>
+        <NodeFrom>
+          <StepRef Number="8" />
+        </NodeFrom>
+        <NodeTo>
+          <BranchRef Number="1" In="0" />
+        </NodeTo>
+        <LinkType>Direct</LinkType>
+      </Connection>
+      <Connection>
+        <NodeFrom>
+          <BranchRef Number="1" Out="0" />
+        </NodeFrom>
+        <NodeTo>
+          <TransitionRef Number="7" />
+        </NodeTo>
+        <LinkType>Direct</LinkType>
+      </Connection>
+      <Connection>
+        <NodeFrom>
+          <BranchRef Number="1" Out="1" />
+        </NodeFrom>
+        <NodeTo>
+          <TransitionRef Number="8" />
+        </NodeTo>
+        <LinkType>Direct</LinkType>
+      </Connection>
+      <Connection>
+        <NodeFrom>
+          <TransitionRef Number="8" />
+        </NodeFrom>
+        <NodeTo>
+          <StepRef Number="9" />
+        </NodeTo>
+        <LinkType>Direct</LinkType>
+      </Connection>
+      <Connection>
+        <NodeFrom>
+          <StepRef Number="9" />
+        </NodeFrom>
+        <NodeTo>
+          <TransitionRef Number="9" />
+        </NodeTo>
+        <LinkType>Direct</LinkType>
+      </Connection>
+      <Connection>
+        <NodeFrom>
+          <TransitionRef Number="9" />
+        </NodeFrom>
+        <NodeTo>
+          <StepRef Number="10" />
+        </NodeTo>
+        <LinkType>Direct</LinkType>
+      </Connection>
+      <Connection>
+        <NodeFrom>
+          <StepRef Number="10" />
+        </NodeFrom>
+        <NodeTo>
+          <TransitionRef Number="10" />
+        </NodeTo>
+        <LinkType>Direct</LinkType>
+      </Connection>
+      <Connection>
+        <NodeFrom>
+          <StepRef Number="3" />
+        </NodeFrom>
+        <NodeTo>
+          <BranchRef Number="2" In="0" />
+        </NodeTo>
+        <LinkType>Direct</LinkType>
+      </Connection>
+      <Connection>
+        <NodeFrom>
+          <BranchRef Number="2" Out="0" />
+        </NodeFrom>
+        <NodeTo>
+          <TransitionRef Number="3" />
+        </NodeTo>
+        <LinkType>Direct</LinkType>
+      </Connection>
+      <Connection>
+        <NodeFrom>
+          <BranchRef Number="2" Out="1" />
+        </NodeFrom>
+        <NodeTo>
+          <TransitionRef Number="11" />
+        </NodeTo>
+        <LinkType>Direct</LinkType>
+      </Connection>
+      <Connection>
+        <NodeFrom>
+          <TransitionRef Number="7" />
+        </NodeFrom>
+        <NodeTo>
+          <StepRef Number="5" />
+        </NodeTo>
+        <LinkType>Jump</LinkType>
+      </Connection>
+      <Connection>
+        <NodeFrom>
+          <TransitionRef Number="10" />
+        </NodeFrom>
+        <NodeTo>
+          <StepRef Number="1" />
+        </NodeTo>
+        <LinkType>Jump</LinkType>
+      </Connection>
+      <Connection>
+        <NodeFrom>
+          <TransitionRef Number="11" />
+        </NodeFrom>
+        <NodeTo>
+          <StepRef Number="1" />
+        </NodeTo>
+        <LinkType>Jump</LinkType>
+      </Connection>
+    </Connections>
+  </Sequence>
+  <PostOperations>
+    <PermanentOperation ProgrammingLanguage="LAD" />
+  </PostOperations>
+  <AlarmsSettings>
+    <AlarmSupervisionCategories>
+      <AlarmSupervisionCategory Id="1" DisplayClass="0" />
+      <AlarmSupervisionCategory Id="2" DisplayClass="0" />
+      <AlarmSupervisionCategory Id="3" DisplayClass="0" />
+      <AlarmSupervisionCategory Id="4" DisplayClass="0" />
+      <AlarmSupervisionCategory Id="5" DisplayClass="0" />
+      <AlarmSupervisionCategory Id="6" DisplayClass="0" />
+      <AlarmSupervisionCategory Id="7" DisplayClass="0" />
+      <AlarmSupervisionCategory Id="8" DisplayClass="0" />
+    </AlarmSupervisionCategories>
+    <AlarmInterlockCategory Id="1" />
+    <AlarmSubcategory1Interlock Id="0" />
+    <AlarmSubcategory2Interlock Id="0" />
+    <AlarmCategorySupervision Id="1" />
+    <AlarmSubcategory1Supervision Id="0" />
+    <AlarmSubcategory2Supervision Id="0" />
+    <AlarmWarningCategory Id="0" />
+    <AlarmSubcategory1Warning Id="0" />
+    <AlarmSubcategory2Warning Id="0" />
+  </AlarmsSettings>
+</Graph></NetworkSource>
+          <ProgrammingLanguage>GRAPH</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>nl-NL</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>nl-NL</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="8" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="9" CompositionName="Items">
+            <AttributeList>
+              <Culture>nl-NL</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FB>
+</Document>

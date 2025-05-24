@@ -1,0 +1,36 @@
+﻿FUNCTION_BLOCK "FB_SystemTimeCounter"
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+   VAR_INPUT 
+      Enable : Bool;
+      CycleTime : Time;
+   END_VAR
+
+   VAR_OUTPUT 
+      SystemTime : Time;
+   END_VAR
+
+   VAR_TEMP 
+      PrevEnable : Bool;
+   END_VAR
+
+
+BEGIN
+	//Start//
+	
+	IF #Enable THEN
+	    // Enkel verhogen als Enable TRUE is
+	    #SystemTime := #SystemTime + #CycleTime;
+	END_IF;
+	
+	// Reset eventueel bij FALSE->TRUE flank
+	//IF NOT #PrevEnable AND #Enable THEN
+	    // Optioneel reset: SystemTime := T#0s;
+	//END_IF;
+	
+	#PrevEnable := #Enable;
+	
+	
+	
+END_FUNCTION_BLOCK
+

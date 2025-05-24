@@ -1,0 +1,23 @@
+﻿FUNCTION_BLOCK "SwitchBlockAxisPosition"
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+   VAR_INPUT 
+      "Sensor Controlled" : Bool;
+      Axis_Sensor_On_Position : Bool;
+      Axis_Encoder_On_Position : Bool;
+   END_VAR
+
+   VAR_OUTPUT 
+      Axis_Measuring_Mode : Bool;
+   END_VAR
+
+
+BEGIN
+	IF #"Sensor Controlled" THEN
+	    #Axis_Measuring_Mode := #Axis_Sensor_On_Position;
+	ELSE
+	    #Axis_Measuring_Mode := #Axis_Encoder_On_Position;
+	END_IF;
+	
+END_FUNCTION_BLOCK
+
