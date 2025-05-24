@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2025-05-24T14:07:34.2892651Z</Created>
+    <Created>2025-05-24T14:53:42.6954034Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -3336,7 +3336,7 @@
           <MultilingualTextItem ID="9A" CompositionName="Items">
             <AttributeList>
               <Culture>nl-NL</Culture>
-              <Text />
+              <Text>MAIN Program</Text>
             </AttributeList>
           </MultilingualTextItem>
         </ObjectList>
