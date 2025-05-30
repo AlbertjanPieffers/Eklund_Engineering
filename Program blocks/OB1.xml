@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2025-05-30T13:02:21.4345819Z</Created>
+    <Created>2025-05-30T16:25:36.2948642Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -92,6 +92,8 @@
     <Member Name="ManualSensorOverride" Datatype="Bool" />
     <Member Name="Axis1_ScaledPosition" Datatype="Real" />
     <Member Name="Axis1_ActualEncPosition" Datatype="Real" />
+    <Member Name="ActivateProductBufferV2" Datatype="Bool" />
+    <Member Name="ActivateProductBufferV3" Datatype="Bool" />
   </Section>
   <Section Name="Constant" />
 </Sections></Interface>
@@ -2806,9 +2808,9 @@
         <Component Name="Systeem RUN" />
       </Symbol>
     </Access>
-    <Access Scope="GlobalVariable" UId="22">
+    <Access Scope="LocalVariable" UId="22">
       <Symbol>
-        <Component Name="Tag_31" />
+        <Component Name="ActivateProductBufferV2" />
       </Symbol>
     </Access>
     <Access Scope="GlobalVariable" UId="23">
@@ -2864,9 +2866,7 @@
       </Symbol>
     </Access>
     <Part Name="Contact" UId="31" />
-    <Part Name="Contact" UId="32">
-      <Negated Name="operand" />
-    </Part>
+    <Part Name="Contact" UId="32" />
     <Call UId="33">
       <CallInfo Name="ProductBuffer_V2" BlockType="FB">
         <Instance Scope="GlobalVariable" UId="34">
@@ -2977,6 +2977,148 @@
         <Component Name="Systeem RUN" />
       </Symbol>
     </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="ActivateProductBufferV3" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="Sensor Op Band" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="PositionManagement" />
+        <Component Name="Data" />
+        <Component Name="Actual_Axis1_Position" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="25">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>300.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="26">
+      <Symbol>
+        <Component Name="Move2Done" />
+        <Component Name="Q" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="27">
+      <Symbol>
+        <Component Name="PLCMemory" />
+        <Component Name="ProductBuffer" />
+        <Component Name="MoveTrigger" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="28">
+      <Symbol>
+        <Component Name="PLCMemory" />
+        <Component Name="ProductBuffer" />
+        <Component Name="ProductsCount" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="29" />
+    <Part Name="Contact" UId="30">
+      <Negated Name="operand" />
+    </Part>
+    <Call UId="31">
+      <CallInfo Name="ProductBuffer_V3" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="32">
+          <Component Name="ProductBuffer_V3_DB" />
+        </Instance>
+        <Parameter Name="SensorInput" Section="Input" Type="Bool" />
+        <Parameter Name="EncoderPosition" Section="Input" Type="Real" />
+        <Parameter Name="TriggerDistance" Section="Input" Type="Real" />
+        <Parameter Name="TriggerFeedback" Section="Input" Type="Bool" />
+        <Parameter Name="TriggerMovement" Section="Output" Type="Bool" />
+        <Parameter Name="ProductCount" Section="Output" Type="Int" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="33">
+      <Powerrail />
+      <NameCon UId="29" Name="in" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="21" />
+      <NameCon UId="29" Name="operand" />
+    </Wire>
+    <Wire UId="35">
+      <NameCon UId="29" Name="out" />
+      <NameCon UId="30" Name="in" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="22" />
+      <NameCon UId="30" Name="operand" />
+    </Wire>
+    <Wire UId="37">
+      <NameCon UId="30" Name="out" />
+      <NameCon UId="31" Name="en" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="23" />
+      <NameCon UId="31" Name="SensorInput" />
+    </Wire>
+    <Wire UId="39">
+      <IdentCon UId="24" />
+      <NameCon UId="31" Name="EncoderPosition" />
+    </Wire>
+    <Wire UId="40">
+      <IdentCon UId="25" />
+      <NameCon UId="31" Name="TriggerDistance" />
+    </Wire>
+    <Wire UId="41">
+      <IdentCon UId="26" />
+      <NameCon UId="31" Name="TriggerFeedback" />
+    </Wire>
+    <Wire UId="42">
+      <NameCon UId="31" Name="TriggerMovement" />
+      <IdentCon UId="27" />
+    </Wire>
+    <Wire UId="43">
+      <NameCon UId="31" Name="ProductCount" />
+      <IdentCon UId="28" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="86" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="87" CompositionName="Items">
+                <AttributeList>
+                  <Culture>nl-NL</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="88" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="89" CompositionName="Items">
+                <AttributeList>
+                  <Culture>nl-NL</Culture>
+                  <Text>ProductBuffer V3 - Testing</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="8A" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="Systeem RUN" />
+      </Symbol>
+    </Access>
     <Access Scope="LiteralConstant" UId="22">
       <Constant>
         <ConstantType>Int</ConstantType>
@@ -3024,9 +3166,9 @@
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="86" CompositionName="Comment">
+          <MultilingualText ID="8B" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="87" CompositionName="Items">
+              <MultilingualTextItem ID="8C" CompositionName="Items">
                 <AttributeList>
                   <Culture>nl-NL</Culture>
                   <Text />
@@ -3034,9 +3176,9 @@
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="88" CompositionName="Title">
+          <MultilingualText ID="8D" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="89" CompositionName="Items">
+              <MultilingualTextItem ID="8E" CompositionName="Items">
                 <AttributeList>
                   <Culture>nl-NL</Culture>
                   <Text>Speed Select 25%</Text>
@@ -3046,7 +3188,7 @@
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="8A" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="8F" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -3100,9 +3242,9 @@
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="8B" CompositionName="Comment">
+          <MultilingualText ID="90" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="8C" CompositionName="Items">
+              <MultilingualTextItem ID="91" CompositionName="Items">
                 <AttributeList>
                   <Culture>nl-NL</Culture>
                   <Text />
@@ -3110,9 +3252,9 @@
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="8D" CompositionName="Title">
+          <MultilingualText ID="92" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="8E" CompositionName="Items">
+              <MultilingualTextItem ID="93" CompositionName="Items">
                 <AttributeList>
                   <Culture>nl-NL</Culture>
                   <Text>Speed Select 75%</Text>
@@ -3122,7 +3264,7 @@
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="8F" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="94" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -3272,9 +3414,9 @@
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="90" CompositionName="Comment">
+          <MultilingualText ID="95" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="91" CompositionName="Items">
+              <MultilingualTextItem ID="96" CompositionName="Items">
                 <AttributeList>
                   <Culture>nl-NL</Culture>
                   <Text />
@@ -3282,9 +3424,9 @@
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="92" CompositionName="Title">
+          <MultilingualText ID="97" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="93" CompositionName="Items">
+              <MultilingualTextItem ID="98" CompositionName="Items">
                 <AttributeList>
                   <Culture>nl-NL</Culture>
                   <Text>Encoder Band Function Block</Text>
@@ -3294,7 +3436,7 @@
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="94" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="99" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -3320,9 +3462,9 @@
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="95" CompositionName="Comment">
+          <MultilingualText ID="9A" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="96" CompositionName="Items">
+              <MultilingualTextItem ID="9B" CompositionName="Items">
                 <AttributeList>
                   <Culture>nl-NL</Culture>
                   <Text />
@@ -3330,9 +3472,9 @@
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="97" CompositionName="Title">
+          <MultilingualText ID="9C" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="98" CompositionName="Items">
+              <MultilingualTextItem ID="9D" CompositionName="Items">
                 <AttributeList>
                   <Culture>nl-NL</Culture>
                   <Text>SystemTime</Text>
@@ -3342,9 +3484,9 @@
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <MultilingualText ID="99" CompositionName="Title">
+      <MultilingualText ID="9E" CompositionName="Title">
         <ObjectList>
-          <MultilingualTextItem ID="9A" CompositionName="Items">
+          <MultilingualTextItem ID="9F" CompositionName="Items">
             <AttributeList>
               <Culture>nl-NL</Culture>
               <Text>MAIN Program</Text>
