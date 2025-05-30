@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2025-05-24T15:51:37.4614344Z</Created>
+    <Created>2025-05-30T13:02:21.4345819Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -3176,27 +3176,33 @@
         <Component Name="Reference Position" />
       </Symbol>
     </Access>
-    <Access Scope="LocalVariable" UId="28">
+    <Access Scope="LiteralConstant" UId="28">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>2800.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
       <Symbol>
         <Component Name="Axis1_ScaledPosition" />
       </Symbol>
     </Access>
-    <Access Scope="LocalVariable" UId="29">
+    <Access Scope="LocalVariable" UId="30">
       <Symbol>
         <Component Name="Axis1_ActualEncPosition" />
       </Symbol>
     </Access>
-    <Access Scope="GlobalVariable" UId="30">
+    <Access Scope="GlobalVariable" UId="31">
       <Symbol>
         <Component Name="PositionManagement" />
         <Component Name="Data" />
         <Component Name="Actual_Axis1_Position" />
       </Symbol>
     </Access>
-    <Call UId="31">
-      <CallInfo Name="FB_EncoderFeedback" BlockType="FB">
-        <Instance Scope="GlobalVariable" UId="32">
-          <Component Name="FB_EncoderFeedback_Aanvoerband" />
+    <Call UId="32">
+      <CallInfo Name="FB_EncoderFeedback_Lineair" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="33">
+          <Component Name="EncoderFeedback_Band" />
         </Instance>
         <Parameter Name="CounterTag" Section="Input" Type="Int" />
         <Parameter Name="Position_Offset" Section="Input" Type="Real" />
@@ -3205,6 +3211,7 @@
         <Parameter Name="ReferenceRun_Command" Section="Input" Type="Bool" />
         <Parameter Name="ReferenceSwitch" Section="Input" Type="Bool" />
         <Parameter Name="ReferencePosition" Section="Input" Type="Int" />
+        <Parameter Name="WrappingPosition" Section="Input" Type="Real" />
         <Parameter Name="Scaled_Position" Section="Output" Type="Real" />
         <Parameter Name="Actual_Enc_Pos" Section="Output" Type="Real" />
         <Parameter Name="AxisDB_Connection" Section="Output" Type="Real" />
@@ -3212,49 +3219,53 @@
     </Call>
   </Parts>
   <Wires>
-    <Wire UId="33">
-      <Powerrail />
-      <NameCon UId="31" Name="en" />
-    </Wire>
     <Wire UId="34">
-      <IdentCon UId="21" />
-      <NameCon UId="31" Name="CounterTag" />
+      <Powerrail />
+      <NameCon UId="32" Name="en" />
     </Wire>
     <Wire UId="35">
-      <IdentCon UId="22" />
-      <NameCon UId="31" Name="Position_Offset" />
+      <IdentCon UId="21" />
+      <NameCon UId="32" Name="CounterTag" />
     </Wire>
     <Wire UId="36">
-      <IdentCon UId="23" />
-      <NameCon UId="31" Name="Pulsfactor" />
+      <IdentCon UId="22" />
+      <NameCon UId="32" Name="Position_Offset" />
     </Wire>
     <Wire UId="37">
-      <IdentCon UId="24" />
-      <NameCon UId="31" Name="Position_Correction" />
+      <IdentCon UId="23" />
+      <NameCon UId="32" Name="Pulsfactor" />
     </Wire>
     <Wire UId="38">
-      <IdentCon UId="25" />
-      <NameCon UId="31" Name="ReferenceRun_Command" />
+      <IdentCon UId="24" />
+      <NameCon UId="32" Name="Position_Correction" />
     </Wire>
     <Wire UId="39">
-      <IdentCon UId="26" />
-      <NameCon UId="31" Name="ReferenceSwitch" />
+      <IdentCon UId="25" />
+      <NameCon UId="32" Name="ReferenceRun_Command" />
     </Wire>
     <Wire UId="40">
-      <IdentCon UId="27" />
-      <NameCon UId="31" Name="ReferencePosition" />
+      <IdentCon UId="26" />
+      <NameCon UId="32" Name="ReferenceSwitch" />
     </Wire>
     <Wire UId="41">
-      <NameCon UId="31" Name="Scaled_Position" />
-      <IdentCon UId="28" />
+      <IdentCon UId="27" />
+      <NameCon UId="32" Name="ReferencePosition" />
     </Wire>
     <Wire UId="42">
-      <NameCon UId="31" Name="Actual_Enc_Pos" />
-      <IdentCon UId="29" />
+      <IdentCon UId="28" />
+      <NameCon UId="32" Name="WrappingPosition" />
     </Wire>
     <Wire UId="43">
-      <NameCon UId="31" Name="AxisDB_Connection" />
+      <NameCon UId="32" Name="Scaled_Position" />
+      <IdentCon UId="29" />
+    </Wire>
+    <Wire UId="44">
+      <NameCon UId="32" Name="Actual_Enc_Pos" />
       <IdentCon UId="30" />
+    </Wire>
+    <Wire UId="45">
+      <NameCon UId="32" Name="AxisDB_Connection" />
+      <IdentCon UId="31" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
@@ -3276,7 +3287,7 @@
               <MultilingualTextItem ID="93" CompositionName="Items">
                 <AttributeList>
                   <Culture>nl-NL</Culture>
-                  <Text>Encoder Wals Function Block</Text>
+                  <Text>Encoder Band Function Block</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>

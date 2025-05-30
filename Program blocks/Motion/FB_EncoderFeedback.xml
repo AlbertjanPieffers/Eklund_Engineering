@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2025-05-24T14:07:45.2115989Z</Created>
+    <Created>2025-05-30T13:02:22.1496444Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -83,7 +83,7 @@
   <Section Name="Constant" />
 </Sections></Interface>
       <IsIECCheckEnabled>false</IsIECCheckEnabled>
-      <Name>FB_EncoderFeedback</Name>
+      <Name>FB_EncoderFeedback_Degree</Name>
       <Number>19</Number>
       <ProgrammingLanguage>FBD</ProgrammingLanguage>
       <UDABlockProperties />
