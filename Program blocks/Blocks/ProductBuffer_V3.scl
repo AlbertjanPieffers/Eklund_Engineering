@@ -1,0 +1,69 @@
+﻿FUNCTION_BLOCK "ProductBuffer_V3"
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+   VAR_INPUT 
+      SensorInput : Bool;   // Sensor aan begin band
+      EncoderPosition : Real;   // Koppel aan Encoder Data Instance
+      TriggerDistance : Real;   // Gewenste Afstand Product voor trigger
+      TriggerFeedback : Bool;
+   END_VAR
+
+   VAR_OUTPUT 
+      TriggerMovement : Bool;   // Trigger Start Movement
+      ProductCount : Int;   // Count products in buffer
+   END_VAR
+
+   VAR 
+      ProductBuffer { S7_SetPoint := 'False'} : Array[0..9] of "ProductTrack";
+      PrevSensor { S7_SetPoint := 'True'} : Bool;
+      MovementActive : Bool;
+      i : Int;
+      Distance : Real;
+   END_VAR
+
+
+BEGIN
+	// 1️⃣ Flankdetectie - detecteer nieuw product
+	IF #SensorInput AND NOT #PrevSensor THEN
+	    FOR #i := 0 TO 9 DO
+	        IF NOT #ProductBuffer[#i].Active THEN
+	            #ProductBuffer[#i].StartPosition := #EncoderPosition;
+	            #ProductBuffer[#i].Active := TRUE;
+	            EXIT;
+	        END_IF;
+	    END_FOR;
+	END_IF;
+	#PrevSensor := #SensorInput;
+	
+	// 2️⃣ Tel actieve producten
+	#ProductCount := 0;
+	FOR #i := 0 TO 9 DO
+	    IF #ProductBuffer[#i].Active THEN
+	        #ProductCount := #ProductCount + 1;
+	    END_IF;
+	END_FOR;
+	
+	// 3️⃣ Zoek eerste product dat zijn afstand heeft afgelegd
+	IF NOT #MovementActive THEN
+	    FOR #i := 0 TO 9 DO
+	        IF #ProductBuffer[#i].Active THEN
+	            #Distance := #EncoderPosition - #ProductBuffer[#i].StartPosition;
+	            
+	            IF #Distance >= #TriggerDistance THEN
+	                #TriggerMovement := TRUE;
+	                #MovementActive := TRUE;
+	                #ProductBuffer[#i].Active := FALSE;
+	                EXIT;
+	            END_IF;
+	        END_IF;
+	    END_FOR;
+	END_IF;
+	
+	// 4️⃣ Wacht op feedback om beweging af te ronden
+	IF #MovementActive AND #TriggerFeedback THEN
+	    #TriggerMovement := FALSE;
+	    #MovementActive := FALSE;
+	END_IF;
+	
+END_FUNCTION_BLOCK
+
